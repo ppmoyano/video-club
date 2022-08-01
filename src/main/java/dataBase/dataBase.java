@@ -3,6 +3,6 @@ package dataBase;
 public class dataBase {
 
     public Object getListadoDePeliculas() {
-        return null;
+        return "LISTA DE PELICULAS";
     }
 }
