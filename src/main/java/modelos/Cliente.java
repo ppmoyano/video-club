@@ -4,7 +4,7 @@ public class Cliente {
     String nombre;
     String apellido;
     String direccion;
-    int fechaDeNacimiento;
+    String fechaDeNacimiento;
     int deuda;
     String peliculasAlquiladas;
 }
