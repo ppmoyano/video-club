@@ -7,8 +7,8 @@ public class Cliente {
     String apellido;
     String direccion;
     String fechaDeNacimiento;
-    float deuda;
-    ArrayList peliculasAlquiladas = new ArrayList();
+    double deuda;
+    ArrayList<Pelicula> peliculasAlquiladas = new ArrayList();
 
     public String getNombre() {
         return nombre;
@@ -42,19 +42,19 @@ public class Cliente {
         this.fechaDeNacimiento = fechaDeNacimiento;
     }
 
-    public float getDeuda() {
+    public double getDeuda() {
         return deuda;
     }
 
-    public void setDeuda(float deuda) {
+    public void setDeuda(double deuda) {
         this.deuda = deuda;
     }
 
-    public ArrayList getPeliculasAlquiladas() {
+    public ArrayList<Pelicula> getPeliculasAlquiladas() {
         return peliculasAlquiladas;
     }
 
-    public void setPeliculasAlquiladas(ArrayList peliculasAlquiladas) {
+    public void setPeliculasAlquiladas(ArrayList<Pelicula> peliculasAlquiladas) {
         this.peliculasAlquiladas = peliculasAlquiladas;
     }
 }

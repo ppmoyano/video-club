@@ -6,8 +6,8 @@ public class Pelicula {
     int id;
     String nombre;
     String genero;
-    ArrayList actoresReparto = new ArrayList();
-    float duracion;
+    ArrayList<String> reparto = new ArrayList();
+    int duracion;
     String formato;
     boolean alquilado;
 
@@ -35,19 +35,19 @@ public class Pelicula {
         this.genero = genero;
     }
 
-    public ArrayList getActoresReparto() {
-        return actoresReparto;
+    public ArrayList<String> getReparto() {
+        return reparto;
     }
 
-    public void setActoresReparto(ArrayList actoresReparto) {
-        this.actoresReparto = actoresReparto;
+    public void setReparto(ArrayList<String> reparto) {
+        this.reparto = reparto;
     }
 
-    public float getDuracion() {
+    public int getDuracion() {
         return duracion;
     }
 
-    public void setDuracion(float duracion) {
+    public void setDuracion(int duracion) {
         this.duracion = duracion;
     }
 
