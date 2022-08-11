@@ -24,7 +24,9 @@ do {
 
     private static void buscarCliente() { //Acá se buscan los clientes, con el apellido o el DNI
         Scanner teclado = new Scanner(System.in);
+
         System.out.println("Ingrese el Apellido o el DNI: ");
+            System.out.println("Aca buscaria el DNI del cliente"); //Necesitaría más info para poder avanzar
         // NO ENTENDÍ LO DEL DNI STRING
         //NO SE COMO JUNTAR ESTO CON LA INFO DE LOS CLIENTES PARA SABER SI EXISTEN O NO.
     }
