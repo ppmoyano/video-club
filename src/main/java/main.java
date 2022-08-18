@@ -3,22 +3,22 @@
 import java.util.Scanner;
 
 public class main {
-    public static void main (String [] ars) {
-int opcion = 7;
+    public static void main(String[] ars) {
+        int opcion = 7;
 
 
-do {
-    opcion = menu(); //acá queda la opción que elegis en el primer menú
- switch (opcion) {
-     case 1:
-         buscarPelicula();
-         break;
-     case 2:
-         buscarCliente();
-         break;
- }
-}
-    while (opcion != 0);
+        do {
+            opcion = menu(); //acá queda la opción que elegis en el primer menú
+            switch (opcion) {
+                case 1:
+                    buscarPelicula();
+                    break;
+                case 2:
+                    buscarCliente();
+                    break;
+            }
+        }
+        while (opcion != 0);
     }
 
 
@@ -26,10 +26,13 @@ do {
         Scanner teclado = new Scanner(System.in);
 
         System.out.println("Ingrese el Apellido o el DNI: ");
-        String DNI; DNI = teclado.nextLine(); System.out.println("El cliente de DNI o Apellido: "+DNI+" no se encuentra");
+        String apellidoODni;
+        apellidoODni = teclado.nextLine();
+        System.out.println("El cliente de DNI o Apellido: " + apellidoODni + " no se encuentra");
 
         //System.out.println("Lo siento no se encontre el Cliente desado.");  // Queda así hardocodeado solamente para el ejemplo, una vez que tengamos más info lo modifico bien.
     }
+
     private static void buscarPelicula() { //Acá se buscan las películas, con los géneros
         Scanner teclado = new Scanner(System.in);
         int opcion = 7;
@@ -50,7 +53,7 @@ do {
                     break;
             }
         }
-while (opcion != 0);
+        while (opcion != 0);
 
 
     }
@@ -59,6 +62,8 @@ while (opcion != 0);
         Scanner teclado = new Scanner(System.in);
         System.out.println("Ingrese el reparto:");
         String opcionReparto = teclado.nextLine();
+        System.out.println("Lo siento, no tenemos ninguna pelicula disponible con ese reparto"); // Queda así hardocodeado solamente para el ejemplo, una vez que tengamos más info lo modifico bien.
+
     }
 
     private static void buscarPorGenero() {
@@ -72,6 +77,8 @@ while (opcion != 0);
         Scanner teclado = new Scanner(System.in);
         System.out.println("Ingrese el título:");
         String opcionTitulo = teclado.nextLine();
+        System.out.println("Lo siento, no tenemos ninguna pelicula disponible con ese titulo"); // Queda así hardocodeado solamente para el ejemplo, una vez que tengamos más info lo modifico bien.
+
     }
 
     private static int menu() {
