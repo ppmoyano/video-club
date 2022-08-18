@@ -26,26 +26,32 @@ do {
         Scanner teclado = new Scanner(System.in);
 
         System.out.println("Ingrese el Apellido o el DNI: ");
-        String opcion = teclado.nextLine();
-        System.out.println("Lo siento no se encontre el Cliente desado.");  // Queda así hardocodeado solamente para el ejemplo, una vez que tengamos más info lo modifico bien.
+        String DNI; DNI = teclado.nextLine(); System.out.println("El cliente de DNI o Apellido: "+DNI+" no se encuentra");
+
+        //System.out.println("Lo siento no se encontre el Cliente desado.");  // Queda así hardocodeado solamente para el ejemplo, una vez que tengamos más info lo modifico bien.
     }
     private static void buscarPelicula() { //Acá se buscan las películas, con los géneros
         Scanner teclado = new Scanner(System.in);
-        System.out.println("Desea buscar la película por:");
-        System.out.println("1 - Titulo 2 - Genero - 3 - Reparto 0 - Volver");
-        int opcion = teclado.nextInt();
-        switch (opcion) {
-            case 1:
-                buscarPorTitulo();
-                break;
-            case 2:
-                buscarPorGenero();
-                break;
-            case 3:
-                buscarPorReparto();
-
-                break;
+        int opcion = 8;
+        do {
+            System.out.println("Desea buscar la película por:");
+            System.out.println("1 - Titulo 2 - Genero - 3 - Reparto 0 - Volver");
+            opcion = teclado.nextInt();
+            switch (opcion) {
+                case 1:
+                    buscarPorTitulo();
+                    break;
+                case 2:
+                    buscarPorGenero();
+                    break;
+                case 3:
+                    buscarPorReparto();
+                    break;
+            }
         }
+while (opcion != 0);
+
+
     }
 
     private static void buscarPorReparto() {
