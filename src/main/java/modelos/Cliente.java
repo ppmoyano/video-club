@@ -8,6 +8,7 @@ public class Cliente {
     String direccion;
     String fechaDeNacimiento;
     double deuda;
+    String dni;
     ArrayList<Pelicula> peliculasAlquiladas = new ArrayList();
 
     public String getNombre() {
@@ -56,5 +57,13 @@ public class Cliente {
 
     public void setPeliculasAlquiladas(ArrayList<Pelicula> peliculasAlquiladas) {
         this.peliculasAlquiladas = peliculasAlquiladas;
+    }
+
+    public String getDni() {
+        return dni;
+    }
+
+    public void setDni(String dni) {
+        this.dni = dni;
     }
 }
