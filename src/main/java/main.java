@@ -32,8 +32,9 @@ do {
     }
     private static void buscarPelicula() { //Acá se buscan las películas, con los géneros
         Scanner teclado = new Scanner(System.in);
-        int opcion = 8;
+        int opcion = 7;
         do {
+
             System.out.println("Desea buscar la película por:");
             System.out.println("1 - Titulo 2 - Genero - 3 - Reparto 0 - Volver");
             opcion = teclado.nextInt();
