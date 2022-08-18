@@ -9,7 +9,6 @@ public class UtilsCliente {
 
     public static Cliente buscarCliente(List<Cliente> listaDeClientes, String apellido) {
 
-        Scanner teclado = new Scanner(System.in);
 
         Cliente clienteEncontrado = new Cliente();
         for (int i = 0; i < listaDeClientes.size(); i++) {
