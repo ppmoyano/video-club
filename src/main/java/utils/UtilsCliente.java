@@ -12,11 +12,23 @@ public class UtilsCliente {
 
         Cliente clienteEncontrado = new Cliente();
         for (int i = 0; i < listaDeClientes.size(); i++) {
-            if (apellido == listaDeClientes.get(i).getApellido()) {
-                clienteEncontrado=listaDeClientes.get(i);
+            if (apellido.equals(listaDeClientes.get(i).getApellido())) {
+                clienteEncontrado = listaDeClientes.get(i);
             }
         }
 
+        return clienteEncontrado;
+    }
+
+    public static Cliente buscarClientePorDni(List<Cliente> listaDeClientes, String dni) {
+
+        Cliente clienteEncontrado = new Cliente();
+        for (int i = 0; i < listaDeClientes.size(); i++) {
+            if (dni.equals(listaDeClientes.get(i).getDni())) {
+                clienteEncontrado = listaDeClientes.get(i);
+            }
+
+        }
         return clienteEncontrado;
     }
 }
