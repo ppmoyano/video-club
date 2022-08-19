@@ -12,7 +12,7 @@ public class UtilsCliente {
 
         Cliente clienteEncontrado = new Cliente();
         for (int i = 0; i < listaDeClientes.size(); i++) {
-            if (apellido == listaDeClientes.get(i).getApellido()) {
+            if (apellido.equals( listaDeClientes.get(i).getApellido()) ){
                 clienteEncontrado=listaDeClientes.get(i);
             }
         }
