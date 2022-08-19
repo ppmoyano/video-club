@@ -38,21 +38,22 @@ public class DataBase {
 
     private List<Cliente> inicializarClientes() {
         List<Cliente> clientes = new ArrayList<>();
-        clientes.add(crearCliente("Pepe","Moyano","Roque Saenz P. 1131","18/03/1987", 3.5));
-        clientes.add(crearCliente("Karen","Tello","La Paz 380","16/12/1992", 0));
-        clientes.add(crearCliente("Marcos","Sanchez","Avenida Diagonal 12","06/10/1975", 0));
-        clientes.add(crearCliente("Ana","Lopez","San MArtin 716","22/07/1945", 10));
-        clientes.add(crearCliente("Pia","Dominguez","Rivadavia 222","01/01/2001", 0));
+        clientes.add(crearCliente("Pepe","Moyano","Roque Saenz P. 1131","18/03/1987", 3.5, "30111222"));
+        clientes.add(crearCliente("Karen","Tello","La Paz 380","16/12/1992", 0, "28111222"));
+        clientes.add(crearCliente("Marcos","Sanchez","Avenida Diagonal 12","06/10/1975", 0, "34111222"));
+        clientes.add(crearCliente("Ana","Lopez","San MArtin 716","22/07/1945", 10,"36111222"));
+        clientes.add(crearCliente("Pia","Dominguez","Rivadavia 222","01/01/2001", 0,"33111222"));
         return clientes;
     }
 
-    private Cliente crearCliente(String nombre, String apellido, String direccion, String fechaDeNacimiento, double deuda) {
+    private Cliente crearCliente(String nombre, String apellido, String direccion, String fechaDeNacimiento, double deuda, String dni) {
         Cliente cliente = new Cliente();
         cliente.setNombre(nombre);
         cliente.setApellido(apellido);
         cliente.setDeuda(deuda);
         cliente.setDireccion(direccion);
         cliente.setFechaDeNacimiento(fechaDeNacimiento);
+        cliente.setDni(dni);
         return cliente;
     }
 
