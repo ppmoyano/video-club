@@ -28,12 +28,7 @@ public class UtilsClienteTest {
         assertEquals("Lopez", cliente.getApellido(), message);
     }
 
-    @Test
-    public void buscarClienteByApellido_return_clienteVacioSiElApellidoEsNull() {
-        Cliente cliente = UtilsCliente.buscarCliente(listaDeClientes, null);
-        String message = "Error de busqueda: Se busco por apellido null y no devolvio un cliente vacio ";
-        assertEquals(null, cliente.getApellido(), message);
-    }
+
 
     @Test
     public void buscarClienteByApellido_return_clienteVacioSiElApellidoNoSeEncuentra() {
@@ -49,12 +44,7 @@ public class UtilsClienteTest {
         assertEquals("1", cliente.getDni(), message);
     }
 
-    @Test
-    public void buscarClienteByDNI_return_clienteVacioSiElDNIesNull() {
-        Cliente cliente = UtilsCliente.buscarClientePorDni(listaDeClientes, null);
-        String message = "Error de busqueda: Se busco por dni= null y no devolvio un cliente vacio ";
-        assertEquals(null, cliente.getApellido(), message);
-    }
+
 
     @Test
     public void buscarClienteByDNI_return_clienteVacioSiElDNINoSeEncuentra() {
