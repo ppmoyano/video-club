@@ -1,10 +1,15 @@
 //PRIMERO ESTOY TRATANDO VER SI ESTO ESTÁ BIEN
 
+import dataBase.DataBase;
+import modelos.Cliente;
+
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 import static utils.UtilsCliente.buscarSegunIngreso;
 
 public class main {
+    static DataBase dataBase = new DataBase();
     public static void main(String[] ars) {
         int opcion = 7;
 
@@ -16,7 +21,7 @@ public class main {
                     buscarPelicula();
                     break;
                 case 2:
-                    buscarSegunIngreso();
+                    buscarCliente();
                     break;
             }
         }
@@ -26,13 +31,11 @@ public class main {
 
     private static void buscarCliente() { //Acá se buscan los clientes, con el apellido o el DNI
         Scanner teclado = new Scanner(System.in);
-
         System.out.println("Ingrese el Apellido o el DNI: ");
         String apellidoODni;
         apellidoODni = teclado.nextLine();
-        System.out.println("El cliente de DNI o Apellido: " + apellidoODni + " no se encuentra");
-
-        //System.out.println("Lo siento no se encontre el Cliente desado.");  // Queda así hardocodeado solamente para el ejemplo, una vez que tengamos más info lo modifico bien.
+        Cliente cliente = buscarSegunIngreso(dataBase.getClientesBaseDeDatos(), apellidoODni);
+        System.out.println("cliente encontrado; " + cliente.getApellido());
     }
 
     private static void buscarPelicula() { //Acá se buscan las películas, con los géneros
