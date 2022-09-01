@@ -2,6 +2,8 @@
 
 import java.util.Scanner;
 
+import static utils.UtilsCliente.buscarSegunIngreso;
+
 public class main {
     public static void main(String[] ars) {
         int opcion = 7;
@@ -14,7 +16,7 @@ public class main {
                     buscarPelicula();
                     break;
                 case 2:
-                    buscarCliente();
+                    buscarSegunIngreso();
                     break;
             }
         }
