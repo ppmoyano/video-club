@@ -23,11 +23,10 @@ public class UtilsClienteTest {
 
     @Test
     public void buscarClienteByApellido_return_clienteEsperado() {
-        Cliente cliente = UtilsCliente.buscarCliente(listaDeClientes, "Lopeza".substring(0,5));
+        Cliente cliente = UtilsCliente.buscarCliente(listaDeClientes, "Lopeza".substring(0, 5));
         String message = "Error de busqueda: Se busco por apellido Lopez y no encontro el cliente de apellido " + cliente.getApellido();
         assertEquals("Lopez", cliente.getApellido(), message);
     }
-
 
 
     @Test
@@ -38,12 +37,11 @@ public class UtilsClienteTest {
     }
 
     @Test
-   public void buscarClienteByDNI_return_clienteEsperado() {
+    public void buscarClienteByDNI_return_clienteEsperado() {
         Cliente cliente = UtilsCliente.buscarClientePorDni(listaDeClientes, "12".substring(0, 1));
         String message = "Error de busqueda: se busco DNI 1 y no lo encontro";
         assertEquals("1", cliente.getDni(), message);
     }
-
 
 
     @Test
@@ -57,6 +55,14 @@ public class UtilsClienteTest {
         Cliente cliente = UtilsCliente.buscarSegunIngreso(listaDeClientes, "1");
         String message = "Error de busqueda: Se busco por apellido inexistente y no devolvio un cliente vacio ";
         assertEquals("Lopez", cliente.getApellido(), message);
+    }
+
+    @Test
+    public void modficiarCliente_return_clienteModificado() {
+        Cliente cliente = UtilsCliente.modificarCliente(listaDeClientes, "1", "Lopez", "Matias", "", "");
+        String message = "El cliente no ha sido modificado correctamente";
+        assertEquals("Matias", cliente.getNombre(), message);
+        assertEquals(null, cliente.getDireccion(), message);
     }
 
     @Test
