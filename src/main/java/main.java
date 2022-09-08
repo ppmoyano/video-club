@@ -1,8 +1,15 @@
 //PRIMERO ESTOY TRATANDO VER SI ESTO ESTÁ BIEN
 
+import dataBase.DataBase;
+import modelos.Cliente;
+
 import java.util.Scanner;
 
+import static utils.UtilsCliente.buscarSegunIngreso;
+
 public class main {
+    static DataBase dataBase = new DataBase();
+
     public static void main(String[] ars) {
         int opcion = 7;
 
@@ -24,13 +31,49 @@ public class main {
 
     private static void buscarCliente() { //Acá se buscan los clientes, con el apellido o el DNI
         Scanner teclado = new Scanner(System.in);
-
         System.out.println("Ingrese el Apellido o el DNI: ");
         String apellidoODni;
         apellidoODni = teclado.nextLine();
-        System.out.println("El cliente de DNI o Apellido: " + apellidoODni + " no se encuentra");
+        Cliente cliente = buscarSegunIngreso(dataBase.getClientesBaseDeDatos(), apellidoODni);
+        System.out.println("cliente encontrado; " + cliente.getApellido());
+        menuCliente(cliente);
 
-        //System.out.println("Lo siento no se encontre el Cliente desado.");  // Queda así hardocodeado solamente para el ejemplo, una vez que tengamos más info lo modifico bien.
+    }
+
+    private static void menuCliente(Cliente cliente) {
+        Scanner teclado = new Scanner(System.in);
+        int opcion = 0;
+        do {
+        System.out.println("Bienvenido " + cliente.getApellido() + " " + cliente.getNombre() + " que desea realizar? \n" +
+                "1 - Modificar Datos 2 - Saldar Deuda  0 - Volver ");
+        opcion = teclado.nextInt();
+        switch (opcion) {
+            case 1:
+                modificarDatosCliente();
+                break;
+      /*     case 2:
+                 saldarDeuda();
+                 break;
+
+       */}
+        }while (opcion != 0);
+    }
+
+    private static void modificarDatosCliente() {
+        Scanner teclado = new Scanner(System.in);
+        System.out.println("Ingrese su nombre (o no ingrese nada para mantener su nombre");
+        String nombre;
+        nombre = teclado.nextLine();
+        System.out.println("Ingrese su apellido (o no ingrese nada para mantener su nombre");
+        String apellido;
+        apellido = teclado.nextLine();
+        System.out.println("Ingrese su direccion (o no ingrese nada para mantener su nombre");
+        String direccion;
+        direccion = teclado.nextLine();
+        System.out.println("Ingrese su fecha de nacimiento (o no ingrese nada para mantener su nombre");
+        String fechaDeNacimiento;
+        fechaDeNacimiento = teclado.nextLine();
+        System.out.println("Cliente actualizado");
     }
 
     private static void buscarPelicula() { //Acá se buscan las películas, con los géneros

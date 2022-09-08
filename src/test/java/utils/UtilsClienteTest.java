@@ -17,7 +17,6 @@ public class UtilsClienteTest {
     public void setup() {
         Cliente cliente = new Cliente();
         cliente.setApellido("Lopez");
-        cliente.setNombre("Mathyas");
         cliente.setDni("1");
         listaDeClientes = List.of(cliente);
     }
@@ -51,6 +50,12 @@ public class UtilsClienteTest {
         String message = "Error de busqueda: Se busco por apellido inexistente y no devolvio un cliente vacio ";
         assertEquals(null, cliente.getApellido(), message);
     }
+    @Test
+    public void buscarClienteSegunIngresoDni_return_clienteEncontrado() {
+        Cliente cliente = UtilsCliente.buscarSegunIngreso(listaDeClientes, "1");
+        String message = "Error de busqueda: Se busco por apellido inexistente y no devolvio un cliente vacio ";
+        assertEquals("Lopez", cliente.getApellido(), message);
+    }
 
     @Test
     public void modficiarCliente_return_clienteModificado() {
@@ -60,5 +65,11 @@ public class UtilsClienteTest {
         assertEquals(null, cliente.getDireccion(), message);
     }
 
+    @Test
+    public void buscarClienteSegunIngresoApellido_return_clienteEncontrado() {
+        Cliente cliente = UtilsCliente.buscarSegunIngreso(listaDeClientes, "Lopez");
+        String message = "Error de busqueda: Se busco por apellido inexistente y no devolvio un cliente vacio ";
+        assertEquals("Lopez", cliente.getApellido(), message);
+    }
 
 }
